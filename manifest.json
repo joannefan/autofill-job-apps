@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Joanne Workday Autofill",
+    "version": "1.0",
+    "description": "Autofills Workday job applications",
+    "icons": {
+        "48": "icons/smile-icon.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icons/smile-icon.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.myworkdayjobs.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
